@@ -2,8 +2,7 @@ import os
 from github import Github, UnknownObjectException
 from github.Label import Label
 from github.Repository import Repository
-import datetime
-
+from datetime import datetime
 
 def add_label(repo: Repository, label_filter):
     """Add hacktoberfest label to all issues labeled with filter label."""
