@@ -1,9 +1,7 @@
 name:  Hacktoberfest Issue Labeler
 on:
   issues:
-    types: opened
-  label:
-    types: created
+    types: [opened,labeled]
 
 jobs:
   build:
