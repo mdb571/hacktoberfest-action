@@ -11,7 +11,7 @@ inputs:
     required: true
   label_filter:
     description: "Label Issues having this label only"
-    default: 'good first issue'
+    required: true
   
 runs:
   using: "docker"

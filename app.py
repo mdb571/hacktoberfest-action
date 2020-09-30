@@ -6,7 +6,10 @@ from datetime import datetime
 
 def add_label(repo: Repository, label_filter,label_to_add: Label):
     """Add hacktoberfest label to all issues labeled with filter label."""
-    issues_list = repo.get_issues(state="open", labels=['label_filter'])
+    if label_filter!="None":
+        issues_list = repo.get_issues(state="open",labels=[label_filter])
+    elif label_filter=="None":
+        issues_list = repo.get_issues(state="open")
     for issue in issues_list:
         issue.add_to_labels(label_to_add)
 
