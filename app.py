@@ -4,11 +4,11 @@ from github.Label import Label
 from github.Repository import Repository
 from datetime import datetime
 
-def add_label(repo: Repository, label_filter):
+def add_label(repo: Repository, label_filter,label_to_add: Label):
     """Add hacktoberfest label to all issues labeled with filter label."""
     issues_list = repo.get_issues(state="open", labels=['label_filter'])
     for issue in issues_list:
-        issue.add_to_labels("hacktoberfest")
+        issue.add_to_labels(label_to_add)
 
 def remove_label(repo: Repository):
     """Remove label from all issues with it."""
@@ -47,9 +47,8 @@ repo = gh.get_repo(gh_repository)
 today = datetime.today()
 
 if today.month==9:
-    if label_filter!="":
-        add_label(repo, label_filter)
-    else:
-        new_label(repo,label_color,)
+    label_to_add=new_label(repo,label_color,)
+    add_label(repo, label_filter="good first issue",label_to_add)
+    print('Hacktoberfest label added')
 else:
     remove_label(repo)
