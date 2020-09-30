@@ -4,7 +4,7 @@ from github.Label import Label
 from github.Repository import Repository
 from datetime import datetime
 
-def add_label(repo: Repository, label_filter="good first issue",label_to_add: Label):
+def add_label(repo: Repository, label_filter,label_to_add: Label):
     """Add hacktoberfest label to all issues labeled with filter label."""
     issues_list = repo.get_issues(state="open", labels=['label_filter'])
     for issue in issues_list:
