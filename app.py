@@ -47,8 +47,10 @@ repo = gh.get_repo(gh_repository)
 
 today = datetime.today()
 
-if today.month==10:
-    new_label(repo,label_color,)
-    add_label(repo, filter_label_names)
+if today.month==9:
+    if label_filter!=None:
+        add_label(repo, filter_label_names)
+    else:
+        new_label(repo,label_color,)
 else:
     remove_label(repo)
