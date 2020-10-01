@@ -50,7 +50,7 @@ repo = gh.get_repo(gh_repository)
 today = datetime.today()
 
 if today.month==10:
-    label_to_add=new_label(repo,label_color,)
+    label_to_add=new_label(repo,label_color)
     add_label(repo, label_filter,label_to_add)
     print('Hacktoberfest label added')
 else:
