@@ -30,7 +30,7 @@ def new_label(
         label_to_add = repo.create_label(
             name='hacktoberfest',
             color=label_color,
-            description="Issues for contributing during the period of hacktoberfest",
+            description="Issues for contributing during the period of hacktoberfest"
         )
     return label_to_add
 
